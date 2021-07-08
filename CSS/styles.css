@@ -564,3 +564,40 @@ a {
         grid-template-columns: 2fr auto;
     }
 }
+
+
+/* Collapsables */
+
+.collapsible {}
+
+.collapsible__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.collapsible__heading {
+    margin-top: 0;
+    font-size: 3rem;
+}
+
+.collapsible__chevron {
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+}
+
+.collapsible__content {
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 1s;
+    transition: opacity 5s;
+    max-height: 0;
+}
+
+.collapsible--expanded .collapsible__chevron {
+    transform: rotate(0);
+}
+
+.collapsible--expanded .collapsible__content {
+    opacity: 1;
+    max-height: 100vh;
+}
